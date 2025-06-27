@@ -45,23 +45,26 @@ The code is optimized for Google Colab and includes all necessary dependency ins
 # CELL 1: Install Dependencies (Run Once)
 !pip install openpyxl
 ```
+
+All other required packages (PyTorch, Transformers, NumPy, Pandas, Scikit-learn, SciPy, Matplotlib) are pre-installed in the Google Colab environment.
+Key Dependencies:
+
+OpenPyXL: Excel file handling (installed via pip in first cell)
+PyTorch: Pre-installed in Colab for neural network operations
+Transformers: Pre-installed in Colab for GPT-2 implementation
+NumPy/Pandas: Pre-installed in Colab for data processing
+Scikit-learn: Pre-installed in Colab for evaluation metrics
+SciPy: Pre-installed in Colab for statistical functions
+
+For local execution, install:
+```python
+pip install torch transformers tokenizers datasets
+pip install pandas numpy scikit-learn matplotlib scipy openpyxl
+```
 ### Setup
 
-[This is an example]
-
-1. Clone this repository
-
-2. Create an virtual environment and activate it
-```bash
-python -m venv thesis-env
-source thesis-env/bin/activate
-```
-
-3. Install requirements
-```bash
-pip install --upgrade pip
-pip install -r requirements.txt
-```
+1. Open the notebook in Google Colab:
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/17Ksc87CQLq2OKk8BHYj24ae2NUBeM039?usp=sharing)
 
 ## Reproducing results
 
