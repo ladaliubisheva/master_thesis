@@ -69,45 +69,68 @@ pip install pandas numpy scikit-learn matplotlib scipy openpyxl
 
 2. Run Cell 1 to install additional dependencies
 3. Upload raw_data.csv file when prompted in Cell 2
+4. Execute cells sequentially
+
+Hardware Requirements:
+
+Google Colab Free: Sufficient for experimentation
+Google Colab Pro: Recommended for faster execution and larger datasets
+The code automatically detects and uses GPU when available in Colab
+
 ## Reproducing results
-
-Describe steps how to reproduce your results.
-
-Here are some examples:
-- [Paperswithcode](https://github.com/paperswithcode/releasing-research-code)
-- [ML Reproducibility Checklist](https://ai.facebook.com/blog/how-the-ai-community-can-get-serious-about-reproducibility/)
-- [Simple & clear Example from Paperswithcode](https://github.com/paperswithcode/releasing-research-code/blob/master/templates/README.md) (!)
-- [Example TensorFlow](https://github.com/NVlabs/selfsupervised-denoising)
+All experiments are fully reproducible through deterministic seeding and controlled experimental conditions. The notebook implements a comprehensive evaluation framework that ensures fair comparison across tokenization methods.
 
 ### Training code
 
-Does a repository contain a way to train/fit the model(s) described in the paper?
+The repository contains complete training pipelines for:
+- **VQ-VAE models**: Neural vector quantization training with encoder/decoder networks
+- **GPT-2 models**: Transformer training with method-specific tokenized sequences
+
+**Non-training components:**
+- **LLMTime**: Numerical serialization (configuration-based, no training required)
+- **Gaussian Binning**: Statistical tokenizer initialization (configuration-based, no training required)
+
+All training procedures use identical hyperparameters and architectures, differing only in tokenization approach.
 
 ### Evaluation code
+The repository implements a rigorous evaluation framework designed for fair comparison across tokenization methods.
 
-Does a repository contain a script to calculate the performance of the trained model(s) or run experiments on models?
+**Evaluation Metrics:**
+- **RMSE**: Root Mean Square Error 
+- **MAPE**: Mean Absolute Percentage Error  
+- **Directional Accuracy**
+
+**Evaluation Design:**
+- **Multi-horizon forecasting**: 1, 5, and 10-day prediction horizons
+- **Multiple test periods**: 5 distinct evaluation windows per horizon
+- **Temporal split**: 2022 cutoff ensuring no data leakage
+- **Controlled generation**: Identical parameters (temperature=0.9, top_k=50) across all methods
+
+**Robustness Framework:**
+- **Multiple random seeds**: All experiments repeated across 3 fixed random seeds
+- **Independent runs**: Complete model retraining for each seed
+- **Statistical aggregation**: Mean and standard deviation reported across runs
+- **Fair comparison**: Same computational budget and evaluation conditions for all methods
+
+The evaluation framework ensures that performance differences reflect the underlying tokenization strategy rather than random initialization variance or experimental design choices.
 
 ### Pretrained models
 
-Does a repository provide free access to pretrained model weights?
+No pretrained models provided - all models trained from scratch for experimental consistency.
 
 ## Results
+The comparative analysis results are stored in the repository as `results.png`, which displays the performance comparison across all three tokenization methods (LLMTime, Gaussian Binning, and VQ-VAE) for different prediction horizons.
 
-Does a repository contain a table/plot of main results and a script to reproduce those results?
+The complete experimental code and detailed results can be accessed through the Google Colab notebook linked above. The notebook automatically generates:
+- Method rankings by evaluation metrics
+- Individual run breakdowns showing consistency across random seeds
+For the full experimental results and analysis, please refer to the interactive notebook.
 
 ## Project structure
 
-(Here is an example from SMART_HOME_N_ENERGY, [Appliance Level Load Prediction](https://github.com/Humboldt-WI/dissertations/tree/main/SMART_HOME_N_ENERGY/Appliance%20Level%20Load%20Prediction) dissertation)
-
 ```bash
 ├── README.md
-├── requirements.txt                                -- required libraries
-├── data                                            -- stores csv file 
-├── plots                                           -- stores image files
-└── src
-    ├── prepare_source_data.ipynb                   -- preprocesses data
-    ├── data_preparation.ipynb                      -- preparing datasets
-    ├── model_tuning.ipynb                          -- tuning functions
-    └── run_experiment.ipynb                        -- run experiments 
-    └── plots                                       -- plotting functions                 
+├── raw_data.csv                                    -- stores data file 
+├── results.png                                     -- stores results table
+├── approach.png                                    -- stores approach illustration              
 ```
