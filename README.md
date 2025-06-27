@@ -8,8 +8,6 @@
 
 **2nd Examiner:** Prof. Dr. Jan Mendling
 
-[Insert here a figure explaining your approach or main results]
-
 ![results](/approach.png)
 
 ## Table of Content
@@ -27,21 +25,26 @@
 
 ## Summary
 
-(Short summary of motivation, contributions and results)
+The use of Large Language Models (LLMs) for time series prediction has been increasingly growing. However, their performance is strongly dependent on how to convert continuous numerical values to discrete token sequences—a design decision under-explored in previous works. This thesis explores the effect of various tokenization methods on predictive performance of LLMs, within the setting of univariate financial time series prediction,  with S&P 500 daily closing prices as a concrete example. Three methods of tokenization are considered: digit-space encoding (LLMTime), distributional quantization (Gaussian Binning), and learned latent codes from Vector Quantized Variational Autoencoders (VQ-VAE). They are integrated in a common GPT-2-based autoregressive prediction model and compared in terms of RMSE(Root Mean Square Error), MAPE(Mean Absolute Percentage Error), and directional accuracy across multiple prediction horizons.
+The results reveal important trade-offs. Whereas VQ-VAE exhibits greater numerical accuracy, it fails to correctly detect directional trends at long horizons. Gaussian Binning provides time-resistant performance at the expense of granularity and accuracy. LLMTime provides the most well-rounded results by merging interpretability and consistent trend detection.
+In short, the study highlights that tokenization is not just a preprocessing step, but instead an inherent modeling decision with significant impact on downstream forecasting performance. These results offer practical guidance for selecting tokenization methods in LLM-based financial time series applications.
 
-**Keywords**: xxx (give at least 5 keywords / phrases).
+
+**Keywords**: tokenization strategies, time series forecasting, Large Language Models (LLMs), financial prediction, vector quantization
 
 **Full text**: [include a link that points to the full text of your thesis]
 *Remark*: a thesis is about research. We believe in the [open science](https://en.wikipedia.org/wiki/Open_science) paradigm. Research results should be available to the public. Therefore, we expect dissertations to be shared publicly. Preferably, you publish your thesis via the [edoc-server of the Humboldt-Universität zu Berlin](https://edoc-info.hu-berlin.de/de/publizieren/andere). However, other sharing options, which ensure permanent availability, are also possible. <br> Exceptions from the default to share the full text of a thesis require the approval of the thesis supervisor.  
 
 ## Working with the repo
 
-### Dependencies
+### Python Version
+This project is designed for **Google Colab environment** (Python 3.10+)
 
-Which Python version is required? 
-
-Does a repository have information on dependencies or instructions on how to set up the environment?
-
+The code is optimized for Google Colab and includes all necessary dependency installations in the first cells:
+```python
+# CELL 1: Install Dependencies (Run Once)
+!pip install openpyxl
+```
 ### Setup
 
 [This is an example]
