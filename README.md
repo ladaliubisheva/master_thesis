@@ -10,7 +10,7 @@
 
 [Insert here a figure explaining your approach or main results]
 
-![results](/result.png)
+![results](/approach.png)
 
 ## Table of Content
 
