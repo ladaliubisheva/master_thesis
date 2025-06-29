@@ -132,5 +132,5 @@ For the full experimental results and analysis, please refer to the interactive 
 ├── README.md
 ├── raw_data.csv                                    -- stores data file 
 ├── results.png                                     -- stores results table
-├── approach.png                                    -- stores approach illustration              
+├── pipeline.png                                    -- stores approach illustration              
 ```
