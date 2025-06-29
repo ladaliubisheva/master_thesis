@@ -8,7 +8,7 @@
 
 **2nd Examiner:** Prof. Dr. Jan Mendling
 
-![results](/approach.png)
+![results](/pipeline.png)
 
 ## Table of Content
 
