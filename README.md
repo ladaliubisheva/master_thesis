@@ -8,7 +8,7 @@
 
 **2nd Examiner:** Prof. Dr. Jan Mendling
 
-![results](/pipeline.png)
+![pipeline](/pipeline.png)
 
 ## Table of Content
 
@@ -74,7 +74,7 @@ pip install pandas numpy scikit-learn matplotlib scipy openpyxl
 Hardware Requirements:
 
 Google Colab Free: Sufficient for experimentation
-Google Colab Pro: Recommended for faster execution and larger datasets
+Google Colab Pro: Recommended for faster execution 
 The code automatically detects and uses GPU when available in Colab
 
 ## Reproducing results
