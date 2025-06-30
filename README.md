@@ -62,7 +62,7 @@ pip install pandas numpy scikit-learn matplotlib scipy openpyxl
 
 1. Open the notebook in Google Colab:
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Hug5-Zz2sMHq0vONGFTWEfJQ2jMareCa?usp=sharing)
-
+Please note, that due to HuggingFace use and it incompatibility with .ipynb in GitHub, this is the only place from which the code can be accessed
 2. Run Cell 1 to install additional dependencies
 3. Upload raw_data.csv file when prompted in Cell 2
 4. Execute cells sequentially
