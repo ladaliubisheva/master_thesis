@@ -65,7 +65,7 @@ pip install pandas numpy scikit-learn matplotlib scipy openpyxl
 
 1. Open the notebook in Google Colab:
 [![Open In Colab]
-(https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/17Ksc87CQLq2OKk8BHYj24ae2NUBeM039?usp=sharing)
+(https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Hug5-Zz2sMHq0vONGFTWEfJQ2jMareCa?usp=sharing)
 
 2. Run Cell 1 to install additional dependencies
 3. Upload raw_data.csv file when prompted in Cell 2
